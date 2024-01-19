@@ -1,12 +1,10 @@
 // vite.config.js
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  build: {
-    // Make sure the entry point is correct
-    
-    rollupOptions: {
-      input: 'src/pages/Main/Main.tsx', // Update with your actual entry file
-    },
-  },
+  
+  // Update with your actual domain
+  base: '/https://mujtabach.netlify.app/',
+  plugins: [react()],
 });
