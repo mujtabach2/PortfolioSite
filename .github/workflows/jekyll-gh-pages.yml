@@ -57,6 +57,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          local_dir: dist
-          target_branch: gh-pages # Change this if your GitHub Pages branch is different
-          commit_message: "Deploy Vite to GitHub Pages"
+          token: ${{ secrets.GITHUB_TOKEN }}
