@@ -18,8 +18,8 @@ import { useTheme } from '../../assets/theme-context';
 
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { useRef } from 'react';
+import Scroll from 'react-scroll';
 
-const Scroll = require('react-scroll');
 const scroll = Scroll.animateScroll;
 
 

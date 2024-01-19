@@ -2,7 +2,7 @@ import { ArrowBackIcon } from '@chakra-ui/icons'
 import { IconButton, useMediaQuery } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-const Scroll = require('react-scroll')
+import Scroll from 'react-scroll'
 const scroll = Scroll.animateScroll
 
 const BackButton = () => {
