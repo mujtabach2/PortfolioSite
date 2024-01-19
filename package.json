@@ -1,7 +1,7 @@
 {
   "name": "mujtaba",
   "version": "0.1.0",
-  "homepage": "mujtabach.netlify.app",
+  "homepage": "https://mujtabach.netlify.app",
   "private": true,
   "type": "module",
   "dependencies": {
