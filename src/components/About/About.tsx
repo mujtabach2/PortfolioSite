@@ -12,7 +12,6 @@ import {
     Link
 } from '@chakra-ui/react';
 import { Element } from 'react-scroll';
-import Fade from 'react-reveal/Fade';
 import headshot from '../../media/headshot.jpg'
 import { useTheme } from '../../assets/theme-context';
 

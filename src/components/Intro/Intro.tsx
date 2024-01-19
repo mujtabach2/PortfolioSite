@@ -12,7 +12,7 @@ import {
     Icon
 } from '@chakra-ui/react';
 import ReactTypingEffect from 'react-typing-effect';
-import Fade from 'react-reveal/Fade';
+
 import Socials from '../global/Socials';
 import { Element } from 'react-scroll';
 import DownArrow from './DownArrow';
@@ -32,7 +32,7 @@ const Intro: FC = () => {
                     >
                         <ReactTypingEffect text="Mujtaba Chaudhry" speed={85} eraseDelay={1000000} typingDelay={650} cursor="_" />
                     </Heading>
-                    <Fade bottom cascade>
+                    <div>
                         <Text
                             fontSize={'2.7rem'}
                             fontWeight={300}
@@ -45,7 +45,7 @@ const Intro: FC = () => {
                         <Box p={4} >
                             <Socials color={useColorModeValue('lightblue', '#9199a9')} />
                         </Box>
-                    </Fade>
+                    </div>
                     <Link
                         href={'/MujtabaResume.pdf'}
                         isExternal

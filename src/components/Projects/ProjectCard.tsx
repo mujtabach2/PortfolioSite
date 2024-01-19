@@ -12,7 +12,6 @@ import {
     Link,
     Button
 } from '@chakra-ui/react';
-import Fade from 'react-reveal/Fade';
 import Card from '../generics/Card';
 import { useTheme } from '../../assets/theme-context';
 interface ProjectCardProps {
@@ -29,7 +28,7 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = (props) => {
     const { theme } = useTheme();
     return (
-        <Fade bottom duration={500} >
+        <div >
 
             <Card 
                 maxW={'325px'}
@@ -137,7 +136,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
                     </Box>
                 </Stack>
             </Card>
-        </Fade>
+        </div>
     );
 };
 
