@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   // Update with your actual domain
-  root:'./',
+  root:'./public',
   base: '/PortfolioSite/',
   plugins: [react()],
 });
