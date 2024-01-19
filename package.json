@@ -64,7 +64,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
