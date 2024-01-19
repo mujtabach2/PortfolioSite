@@ -19,6 +19,7 @@ import { useTheme } from '../../assets/theme-context';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import Scroll from 'react-scroll';
+import LiveTicker from '../../pages/Project/ParallaxTest';
 
 
 const scroll = Scroll.animateScroll;
@@ -36,6 +37,8 @@ const Projects: FC = () => {
     const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
     const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
+
+
     return (
         <Element id='projects'>
             <Container maxW={'10xl'} p={6.75} mt={20} mb={[10, 20]} px={[0, 10]}>
@@ -48,7 +51,7 @@ const Projects: FC = () => {
                                 opacity: opacityProgess,
                                 }}
                             >
-                                <p className="font-black mb-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center">
+                                <p className="font-black mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">
                                 <span className="text-[--orange]" style={{color: '#55c9e6'}}>&lt;</span>Projects
                                 <span className="text-[--orange]" style={{color: '#55c9e6'}}>/&gt;</span>
                                 </p>
@@ -93,6 +96,7 @@ const Projects: FC = () => {
                     </Link>
                 </VStack>
             </Container>
+            <LiveTicker />
         </Element>
     );
 };

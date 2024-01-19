@@ -10,12 +10,14 @@ import ThemeContextProvider from "./assets/theme-context"
 
 import ActiveSectionContextProvider from "./assets/active-section-context"
 import { useTheme } from "./assets/theme-context"
+import { ScrollProgress } from "./components/Background/ScrollProgress"
 
 const BackgroundComponent = React.lazy(() => import("./components/Background/Background"))
 
 export const App = () => (
 
     <ChakraProvider >
+        
             <ThemeContextProvider>
       
                     <ActiveSectionContextProvider>           

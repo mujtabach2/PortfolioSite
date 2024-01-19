@@ -19,10 +19,10 @@ const MarkdownRender = (props) => {
     }
 
     return (
-        <>
+        <div style={{fontSize: '2rem'}}>
             <ReactMarkdown className='markdown'
                 {...newProps}/>
-        </>
+        </div>
     )
 }
 

@@ -1,55 +1,87 @@
-import React,{lazy, Suspense} from 'react';
-import Intro from "../../components/Intro"
-import About from "../../components/About"
-import Projects from "../../components/Projects"
-// import Experience from '../../components/Experience';
-import Background from '../../components/Background/Background';
-import Layout from '../../layout/Layout';
-import { useTheme } from '../../assets/theme-context';
-import { ScrollProgress } from '../../components/Background/ScrollProgress';
-import ThemeSwitch from '../../components/Background/theme-switch';
-const TechStack = lazy(() => import("../../components/Skills/TechStack"));
-const Nav = lazy(() => import("../../components/Nav/Nav"));
-const Contact = lazy(() => import("../../components/Contact/Contact"));
-const BackgroundComponent = lazy(() => import("../../components/Background/Background"));
-const LazySiteBarLeft = lazy(() => import("../../components/Sidebars/SideBarLeft"));
+import React, { lazy, Suspense } from "react";
+import Layout from "../../layout/Layout";
+import Footer from "../../components/Footer";
+import ThemeSwitch from "../../components/Background/theme-switch";
+import { useTheme } from "../../assets/theme-context";
+import ScrollProgress from "../../components/Background/ScrollProgress";
+import Divider from "../../components/Divider";
+import Projects from "../../components/Projects";
+import Intro from "../../components/Intro";
+
+
+const LazyBannerQuote = lazy(() => import("../../components/BannerQoute"));
 const LazySiteBarRight = lazy(() => import("../../components/Sidebars/SideBarRight"));
+const LazySiteBarLeft = lazy(() => import("../../components/Sidebars/SideBarLeft"));
+const LazyTechStack = lazy(() => import("../../components/Skills/TechStack"));
+const LazyAboutMe = lazy(() => import("../../components/About"));
+const LazyContact = lazy(() => import("../../components/Contact"));
 
 
+import RadialGradient from "../../components/Background/Background";
 
-const Main = () => {
-    const { theme } = useTheme()
-    return (
-        <>
+const Main: React.FC = () => {
+  const { theme } = useTheme();
+
+  return (
+    <>
+      <Layout>
         <ThemeSwitch />
-        <Layout>
-            <ScrollProgress
-                position={"left"}
-                color={"blue"}
-                height={10}
-                smoothness
-            />
-            <Suspense fallback={<div>Loading...</div>}>
-                <LazySiteBarLeft />
-                <LazySiteBarRight />
-          </Suspense>
-            < BackgroundComponent
-                opacity={theme=== "light" ? "opacity-30" : "opacity-30"}
+        <header className="h-screen">
+          <ScrollProgress
+            position={"left"}
+            color={"orange"}
+            height={10}
+            smoothness={true}
+          />
+           <RadialGradient
+                opacity={theme === "light" ? "opacity-30" : "opacity-30"}
                 scale="scale-y-100"
                 position="-top-24"
-            />
-        
+              />
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazySiteBarLeft />
             <Intro />
-            <About />
-            <TechStack />
-            <Projects />
-            <Contact />
-            
+            <LazySiteBarRight />
+          </Suspense>
+        </header>
+        <main className="relative">
+        <LazyBannerQuote
+              style={"withBG"}
+              quoteIndex={0}
+              containerType="quote"
+            />
+        <LazyAboutMe />
+        <LazyBannerQuote
+              style={"withBG"}
+              quoteIndex={0}
+              containerType="quote"
+            />
+          <Suspense fallback={<div>Loading...</div>}>
+           
+           
+    
 
-            {/* Background component */}
-        </Layout>
-        </>
-    );
-}
+            <LazyTechStack />
+          
+
+
+            <Projects />
+            
+            <div className="relative -mb-24 pb-32 -mt-0">
+              {/* <RadialGradient
+                opacity={theme === "light" ? "opacity-30" : "opacity-30"}
+                scale="scale-y-100"
+                position="-top-24"
+              /> */}
+            
+              <LazyContact />
+            </div>
+          </Suspense>
+        </main>
+
+      </Layout>
+    </>
+  );
+};
 
 export default Main;

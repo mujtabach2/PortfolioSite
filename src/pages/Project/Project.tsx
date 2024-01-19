@@ -20,7 +20,7 @@ const Project = () => {
     }, [])
 
     return (
-        <>
+        <div  >
             {
                 projectData 
                 && Object.keys(projectData).length === 0
@@ -29,10 +29,12 @@ const Project = () => {
                         <Text fontSize={60} mt={40}>This project does not exist.</Text>
                     </Center>
                 ) : (
-                    <ProjectContent projectData={projectData} />
+                    
+                        <ProjectContent projectData={projectData} />
+                    
                 )
             }
-        </>
+        </div>
     );
 }
 

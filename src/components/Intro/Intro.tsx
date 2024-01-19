@@ -22,34 +22,37 @@ const Intro: FC = () => {
 
     return (
         <Element id='home'>
-            <Container maxW={'6xl'} p={6.75} pt={['25vh', '35vh']} h={'100vh'}>
+            <Container maxW={'6xl'} p={6.75} pt={['25vh', '35vh']} h={'100vh'} style={{ margin: 'auto' }}>
                 <VStack>
                     <Heading
                         fontSize={'4.5rem'}
                         fontWeight={500}
                         fontFamily={'source-code-pro, monospace'}
                         textAlign='center'
+                        ml={2}
                     >
                         <ReactTypingEffect text="Mujtaba Chaudhry" speed={85} eraseDelay={1000000} typingDelay={650} cursor="_" />
                     </Heading>
-                    <div>
+                    <div >
                         <Text
                             fontSize={'2.7rem'}
                             fontWeight={300}
                             color={useColorModeValue('#5a657c', '#9199a9')}
                             textAlign='center'
                             letterSpacing={1.1}
+                            ml={2}
                         >
                             Full Stack Developer
                         </Text>
-                        <Box p={4} >
+                        <Box p={4} ml={79.9}>
                             <Socials color={useColorModeValue('lightblue', '#9199a9')} />
                         </Box>
                     </div>
                     <Link
-                        href={'/MujtabaResume.pdf'}
+                        href={'/mujtabaResume.pdf'}
                         isExternal
                         _hover={{ 'textDecor': 'none' }}
+                        mr={0}
                     >
                         <Button
                             variant={'outline'}

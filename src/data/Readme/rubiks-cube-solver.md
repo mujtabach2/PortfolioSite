@@ -1,4 +1,3 @@
-# Rubik's Cube Solver
 
 ![Rubik's Cube](https://cdn.thewirecutter.com/wp-content/media/2023/01/rubikscube-2048px-08408.jpg)
 
@@ -54,7 +53,7 @@ python3 colordetect.py
 ```
 
 4. Adjust hsv values until the desired colour is the only colour seen on the cube. Remember to adjust values in the function `detectColor` after optimal hsv values are found.
-![detect](/src/data/Readme/imgs/imgs/setColor.png)
+![detect](/imgs/imgs/setColor.png)
 
 ## Usage
 
@@ -66,11 +65,11 @@ python3 open.py
 3. Line up the cube on the 9 squares on the screen until the top-left detector matches the face's state, and press the corresponding key on the face of the preview cube to save that face's state.
 ![detect](./img/imgs/rename.png)
 4. Repeat for all sides being conscious of the position, use the preview for aid.
-![detect](/src/data/Readme/imgs/properState.png)
+![detect](/imgs/properState.png)
 5. Once all faces are scanned press enter(for each step), and the program will display the solution in 2D visualization and on screen.
-![detect](/src/data/Readme/imgs/solve.gif)
+![detect](/imgs/solve.gif)
 6. Textual Instruction will be in the console.
-![detect](/src/data/Readme/imgs/text.png)
+![detect](/imgs/text.png)
 
 
 ## Acknowledgments

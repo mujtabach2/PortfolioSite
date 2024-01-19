@@ -1,6 +1,5 @@
-# NBA Lineup Analysis Tool
 
-![NBA Lineup Analysis](/src/data/Readme/imgs/img1.png)
+![NBA Lineup Analysis](/imgs/img1.png)
 
 ## Description
 
@@ -47,18 +46,18 @@ streamlit run main.py
 2. On the web application, select the desired NBA team and a lineup from the available options.
 
 5. Use the dropdown to choose specific performance metrics for sorting the lineup.
-![Stat Dropdown](/src/data/Readme/imgs/img2.png)
+![Stat Dropdown](/imgs/img2.png)
 
 4. The app will display the selected lineup's statistics, including points, field goal percentage, assists, rebounds, steals, blocks, and more.
-![Lineup stats](/src/data/Readme/imgs/img3.png)
+![Lineup stats](/imgs/img3.png)
 
 
 6. The app will calculate and display advanced metrics such as Player Efficiency Rating (PER), True Shooting Percentage (TS%), and Effective Field Goal Percentage (eFG%).
-![Advanced Stats](/src/data/Readme/imgs/img4.png)
+![Advanced Stats](/imgs/img4.png)
 
 8. To compare two teams, select a second team from the dropdown and choose a performance metric for comparison. The team's lineup will be the highest-ranked according to the performance metric
 
-![Comparison](/src/data/Readme/imgs/img5.png)
+![Comparison](/imgs/img5.png)
 
 ## Acknowledgments
 

@@ -1,98 +1,31 @@
-import { Badge } from '@chakra-ui/react';
+import React from 'react';
+import { FaReact, FaNodeJs, FaDatabase, FaFire, FaPython, FaGit, FaHtml5, FaCss3, FaJs, FaChartBar, FaFileCode, FaDesktop } from 'react-icons/fa';
+import { SiSelenium, SiOpencv, SiStreamlit, SiPandas, SiJupyter } from 'react-icons/si';
 
-export const FirebaseBadge = () => {
-    return <Badge colorScheme={'orange'}>Firebase</Badge>;
-}
+const badgeStyle = {
+  fontSize: '2em', // Adjust the font size as needed
+  marginRight: '5px', // Adjust spacing as needed
+};
 
-export const JavaBadge = () => {
-    return <Badge colorScheme={'red'}>Java</Badge>;
-}
+const ReactBadge = () => <FaReact style={{ ...badgeStyle, color: '#61DAFB' }} />;
+const NodeBadge = () => <FaNodeJs style={{ ...badgeStyle, color: '#8CC84B' }} />;
+const MongoBadge = () => <FaDatabase style={{ ...badgeStyle, color: '#4DB33D' }} />;
+const FirebaseBadge = () => <FaFire style={{ ...badgeStyle, color: '#FFA611' }} />;
+const SeleniumBadge = () => <SiSelenium style={{ ...badgeStyle, color: '#43B02A' }} />;
+const PythonBadge = () => <FaPython style={{ ...badgeStyle, color: '#306998' }} />;
+const OpenCVBadge = () => <SiOpencv style={{ ...badgeStyle, color: '#273746' }} />;
+const ComputerVisionBadge = () => <FaDesktop style={{ ...badgeStyle, color: '#6C757D' }} />;
+const GitBadge = () => <FaGit style={{ ...badgeStyle, color: '#F05032' }} />;
+const JavaScriptBadge = () => <FaJs style={{ ...badgeStyle, color: '#F0DB4F' }} />;
+const HTMLCSSBadge = () => (
+  <>
+    <FaHtml5 style={{ ...badgeStyle, color: '#E44D26' }} /> <FaCss3 style={{ ...badgeStyle, color: '#264DE4' }} />
+  </>
+);
+const StreamlitBadge = () => <SiStreamlit style={{ ...badgeStyle, color: '#FF4E00' }} />;
+const PandasBadge = () => <SiPandas style={{ ...badgeStyle, color: '#150458' }} />;
+const JupyterBadge = () => <SiJupyter style={{ ...badgeStyle, color: '#F37726' }} />;
 
-export const MongoBadge = () => {
-    return <Badge colorScheme={'green'}>MongoDB</Badge>;
-}
+// Add more badges as needed
 
-export const MySQLBadge = () => {
-    return <Badge colorScheme={'orange'}>MySQL</Badge>;
-}
-
-export const NodeBadge = () => {
-    return <Badge colorScheme={'green'}>NodeJS</Badge>;
-}
-
-export const PHPBadge = () => {
-    return <Badge colorScheme={'purple'}>PHP</Badge>;
-}
-
-export const PythonBadge = () => {
-    return <Badge colorScheme={'blue'}>Python</Badge>;
-}
-
-export const ReactBadge = () => {
-    return <Badge colorScheme={'teal'}>ReactJS</Badge>;
-}
-
-export const AssemblyBadge = () => {
-    return <Badge colorScheme={'orange'}>Assembly</Badge>;
-}
-
-export const DjangoBadge = () => {
-    return <Badge colorScheme={'green'}>Django</Badge>;
-}
-
-export const TypescriptBadge = () => {
-    return <Badge colorScheme={'blue'}>Typescript</Badge>;
-}
-
-export const SeleniumBadge = () => {
-    return <Badge colorScheme={'gray'}>Selenium</Badge>;
-}
-
-export const OpenCVBadge = () => {
-    return <Badge colorScheme={'gray'}>OpenCV</Badge>;
-}
-
-export const ComputerVisionBadge = () => {
-    return <Badge colorScheme={'gray'}>Computer Vision</Badge>;
-}
-
-export const GitBadge = () => {
-    return <Badge colorScheme={'gray'}>Git</Badge>;
-}
-
-export const JavaScriptBadge = () => {
-    return <Badge colorScheme={'yellow'}>JavaScript</Badge>;
-}
-
-export const HTMLCSSBadge = () => {
-    return <Badge colorScheme={'cyan'}>HTML/CSS</Badge>;
-}
-
-export const MatplotlibBadge = () => {
-    return <Badge colorScheme={'gray'}>Matplotlib</Badge>;
-}
-
-export const StreamlitBadge = () => {
-    return <Badge colorScheme={'gray'}>Streamlit</Badge>;
-}
-
-export const PandasBadge = () => {
-    return <Badge colorScheme={'gray'}>Pandas</Badge>;
-}
-
-export const JupyterBadge = () => {
-    return <Badge colorScheme={'gray'}>Jupyter</Badge>;
-}
-
-export const NumpyBadge = () => {
-    return <Badge colorScheme={'gray'}>Numpy</Badge>;
-}
-
-export const ScipyBadge = () => {
-    return <Badge colorScheme={'gray'}>Scipy</Badge>;
-}
-
-export const ScikitBadge = () => {
-    return <Badge colorScheme={'gray'}>Scikit-Learn</Badge>;
-}
-
+export { ReactBadge, NodeBadge, MongoBadge, FirebaseBadge, SeleniumBadge, PythonBadge, OpenCVBadge, ComputerVisionBadge, GitBadge, JavaScriptBadge, HTMLCSSBadge, StreamlitBadge, PandasBadge, JupyterBadge };

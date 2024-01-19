@@ -84,7 +84,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
                         color={'blue.200'}
                         textTransform={'uppercase'}
                         fontWeight={800}
-                        fontSize={'sm'}
+                        fontSize={'xl'}
                         letterSpacing={1.1}
                     >
                         {props.type}
@@ -92,7 +92,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
                     <Flex>
                         <Heading
                             color={useColorModeValue('gray.700', 'white')}
-                            fontSize={'2xl'}
+                            fontSize={'3xl'}
                             fontFamily={'body'}
                         >
                             {props.name}
@@ -118,8 +118,8 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
                                 variant={'outline'}
                                 colorScheme={'cyan'}
                                 aria-label={`Read more about ${props.name}`}
-                                fontSize={'1rem'}
-                                size={'sm'}
+                                fontSize={'2rem'}
+                                size={'lg'}
                                 pb={0}
                                 mt={2}
                                 _hover={{

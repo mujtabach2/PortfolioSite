@@ -1,9 +1,7 @@
-# Health Connect
-
-![search](/src/data/Readme/imgs/homepage.png)
 
 
-<h1>Health Connect</h1>
+![search](/imgs/homepage.png)
+
 
 ## Description
 Doctor Lookup is a web application that allows users to search for doctors and view their information. The application uses web scraping with Selenium to gather doctor data from various websites, and the information is then stored in a MongoDB database. The frontend is built using React with HTML/CSS and Bootstrap for styling. The application includes a map feature using the Google Maps API to display the locations of doctors. Users can also log in, and user authentication is implemented using Node.js Passport.
@@ -64,18 +62,18 @@ npm start
 
 ### 1. On the home page, users can search for doctors using the search bar and view the list of doctors.
 
-![search](/src/data/Readme/imgs/search.png)
+![search](/imgs/search.png)
 
 ### 2. Clicking on a doctor's name will display their detailed information, including location on the map.
    
-![search](/src/data/Readme/imgs/map.png)
+![search](/imgs/map.png)
 ### 3. You can see the reviews and ratings for each doctor.
    
-![search](/src/data/Readme/imgs/viewReview.png)
+![search](/imgs/viewReview.png)
 ### 4. Users can log in to access additional features, such as adding reviews for doctors and/or adding your rating for each doctor.
    
-![search](/src/data/Readme/imgs/login.png)
-![search](/src/data/Readme/imgs/user.png)
+![search](/imgs/login.png)
+![search](/imgs/user.png)
 
 
 ## Acknowledgments

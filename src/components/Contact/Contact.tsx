@@ -184,7 +184,7 @@ There's a message for you:\n
             }}
           >
               
-            <p className="font-black mb-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center">
+              <p className="font-black mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">
               <span className="text-[--orange]" style={{color: '#55c9e6'}}>&lt;</span>
               {contactData.title.en}
               <span className="text-[--orange]" style={{color: '#55c9e6'}}>/&gt;</span>

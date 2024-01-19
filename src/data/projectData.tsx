@@ -1,23 +1,21 @@
 import { FiGithub, FiLink } from 'react-icons/fi';
 import {
   FirebaseBadge,
-  JavaBadge,
+  
   MongoBadge,
-  MySQLBadge,
+  
   NodeBadge,
-  PHPBadge,
+
   PythonBadge,
   ReactBadge,
-  AssemblyBadge,
-  DjangoBadge,
-  TypescriptBadge,
+ 
     SeleniumBadge,
     OpenCVBadge,
     ComputerVisionBadge,
     GitBadge,
     JavaScriptBadge,
     HTMLCSSBadge,
-    MatplotlibBadge,
+   
     StreamlitBadge,
     PandasBadge,
     JupyterBadge,
@@ -94,7 +92,7 @@ export const projectData: ProjectT[] = [
     id: 'nba-lineup-analysis',
     type: 'Web app',
     tagline: 'An NBA Lineup Analysis Tool leveraging Streamlit',
-    tags: [<JavaScriptBadge />, <HTMLCSSBadge />, <MatplotlibBadge />, <StreamlitBadge />, <PandasBadge />, <GitBadge />],
+    tags: [<JavaScriptBadge />, <HTMLCSSBadge />, <StreamlitBadge />, <PandasBadge />, <GitBadge />],
     description: 'Launched and executed an NBA Lineup Analysis Tool leveraging Streamlit; facilitated comprehensive analysis with intuitive visualizations, resulting in a 75% increase in Fantasy performance and data-driven strategic decision-making.',
     links: [
       {
@@ -110,7 +108,7 @@ export const projectData: ProjectT[] = [
     id: 'billionaire-dynamics',
     type: 'Data Analysis',
     tagline: 'An in-depth analysis of global billionaires',
-    tags: [<PythonBadge />, <PandasBadge />, <MatplotlibBadge />, <JupyterBadge />, <GitBadge />],
+    tags: [<PythonBadge />, <PandasBadge />, <JupyterBadge />, <GitBadge />],
     description: 'Conducted an in-depth analysis of global billionaires, utilizing Python and data analysis libraries. Extracted and processed data to identify trends and patterns in billionaire demographics, wealth distribution, and source of wealth.',
     links: [
       {

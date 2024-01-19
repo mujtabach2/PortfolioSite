@@ -9,6 +9,7 @@ import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 import BackButton from './BackButton';
 
 
+
 const ProjectsPage = () => {
     return (
         <>
@@ -60,6 +61,7 @@ const ProjectsPage = () => {
                 }
 
             </Wrap>
+            
         </>
     )
 }

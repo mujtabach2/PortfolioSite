@@ -22,7 +22,9 @@ import { FiGithub } from "react-icons/fi";
 import MarkdownRender from "./MarkdownRender";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import Blockquote from "./Blockquote";
-
+import ScrollProgress from "../../components/Background/ScrollProgress";
+import RadialGradient from "../../components/Background/Background";
+import { useTheme } from "../../assets/theme-context";
 
 interface ProjectContentProps {
     projectData: ProjectT
@@ -31,6 +33,7 @@ interface ProjectContentProps {
 const ProjectContent = (props: ProjectContentProps) => {
     const projectData = props.projectData
     const [markdown, setMarkdown] = useState<string>('')
+    const { theme } = useTheme();
 
     useEffect(() => {
         import(`../../data/Readme/${projectData['id']}.md`)
@@ -45,25 +48,21 @@ const ProjectContent = (props: ProjectContentProps) => {
 
     return (
         <>
-            <Box
-                h={'275px'}
-                w={'100vw'}
-                bg={'gray.100'}
-                mt={-6}
-                mb={6}
-                pos={'relative'}>
-                <Link href={projectData['headerLink']} isExternal>
-                    <Image
-                        src={projectData['imageSrc']}
-                        height={'275px'}
-                        width={'100%'}
-                        fit={'cover'}
-                        backgroundPosition={'30px top'}
-                        style={{filter: 'blur(2px)'}}
-                    />
-                </Link>
-            </Box>
-            <Container pt={0} minH={'100vh'}>
+            <RadialGradient 
+            opacity={theme=== "light" ? "opacity-30" : "opacity-30"}
+            scale="scale-y-100"
+            position="-top-24"
+            />
+            <header>
+                <ScrollProgress
+                    position="left"
+                    color="blue"
+                    height={10}
+                    smoothness={true}
+                 />  
+            </header>
+            
+            <Container pt={0} minH={'100vh'} maxW={'container.xl'} >
                 <Stack>
                     <Breadcrumb
                         spacing='8px'
@@ -89,20 +88,20 @@ const ProjectContent = (props: ProjectContentProps) => {
                         color={'blue.200'}
                         textTransform={'uppercase'}
                         fontWeight={800}
-                        fontSize={'sm'}
+                        fontSize={'1.5rem'}
                         letterSpacing={1.1}
                     >
                         {projectData['type']}
                     </Text>
                     <Heading
                         color={useColorModeValue('gray.700', 'white')}
-                        fontSize={32}
+                        fontSize={'4rem'}
                         fontFamily={'body'}
                         fontWeight={800}
                     >
                         {projectData['name']}
                     </Heading>
-                    <Text pb={4}>
+                    <Text pb={4} fontSize={'2rem'}>
                         {projectData['tagline']}
                     </Text>
                     <HStack>
@@ -120,7 +119,7 @@ const ProjectContent = (props: ProjectContentProps) => {
                     </HStack>
 
                     <Box mt={20}>
-                        <Blockquote mt={10}>
+                        <Blockquote mt={5} fontSize={'2rem'}>
                             {projectData['description']}
                         </Blockquote>
                         <MarkdownRender markdown={markdown} />

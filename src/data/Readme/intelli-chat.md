@@ -1,4 +1,3 @@
-# Intelli Chat
 
 Intelli-Chat Generator is an AI-driven language learning tool that allows users to engage in chat conversations with an AI bot, making language learning fun and immersive.
 
@@ -14,9 +13,9 @@ Visit [IntelliChat](https://659b92eb4826241a5019b6ff--intelli-chat.netlify.app) 
 
 ## Screenshots
 
-![Screenshot 1](/src/data/Readme/imgs/scr1.png)
-![Screenshot 2](/src/data/Readme/imgs/scr2.png)
-![Screenshot 3](/src/data/Readme/imgs/scr3.png)
+![Screenshot 1](/imgs/scr1.png)
+![Screenshot 2](/imgs/scr2.png)
+![Screenshot 3](/imgs/scr3.png)
 
 ## Getting Started
 
