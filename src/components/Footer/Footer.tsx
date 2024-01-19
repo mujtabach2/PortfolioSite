@@ -1,12 +1,12 @@
 // @ts-nocheck
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
-import { sideBarLeftSocials, footerLinks } from "../../assets/data";
+import { sideBarLeftSocials } from "../../assets/data";
 
 import { useTheme } from "../../assets/theme-context";
 
-import Popup from "reactjs-popup";
-import { VscChromeClose } from "react-icons/vsc";
+
+
 
 
 interface SocialLink {
