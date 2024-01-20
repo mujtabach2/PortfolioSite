@@ -12,6 +12,7 @@ import {
 import { wrap } from "@motionone/utils"; 
 import { Link } from "react-router-dom";
 import { sideBarLeftSocials, liveTickerData } from "../../assets/data"
+import { useTheme } from "../../assets/theme-context";
 
 interface ParallaxProps {
   children: any;
@@ -22,6 +23,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
 
   const baseX = useMotionValue(0);
+
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
@@ -121,6 +123,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 }
 
 export default function LiveTicker() {
+  const { theme } = useTheme();
  
   return (
     <>
@@ -131,8 +134,8 @@ export default function LiveTicker() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-[--lightblue]">&lt;</span>
-            {liveTickerData.content.en}
+            <span className="text-[--lightblue]"  >&lt;</span>
+            <span style={{color: `${theme === 'dark' ? 'white': 'white'}`}}>More Projects on Github</span>
             <span className="text-[--lightblue]">/&gt;</span>
           </Link>
         </ParallaxText>
