@@ -10,8 +10,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact: React.FC = () => {
-    const formScriptURL = 'https://script.google.com/macros/s/AKfycbxwPEQuC7WTiqnQ4TadeGUItzavv2FuEQZrFzhLvkv_D0_O7pZxfVdVlZl9DTL0ldeEFA/exec';
-
+  const formScriptURL =
+    "https://script.google.com/macros/s/AKfycbxwPEQuC7WTiqnQ4TadeGUItzavv2FuEQZrFzhLvkv_D0_O7pZxfVdVlZl9DTL0ldeEFA/exec";
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -36,19 +36,22 @@ const Contact: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(formScriptURL, { method: 'POST', body: new FormData(e.currentTarget) });
+      const response = await fetch(formScriptURL, {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+      });
       console.log(response);
 
       if (response.ok) {
-          toast.success(toastMessages.successEmailSent.en);
+        toast.success(toastMessages.successEmailSent.en);
         setLastUpdatedField(null);
         e.currentTarget.reset();
       } else {
-        throw new Error('Failed to send form data.');
+        throw new Error("Failed to send form data.");
       }
     } catch (error) {
       console.error(error);
-       toast.error(toastMessages.failedEmailSent.en);
+      toast.error(toastMessages.failedEmailSent.en);
       setError("An Error occurred, try again later");
     }
   };
@@ -60,7 +63,7 @@ const Contact: React.FC = () => {
   const wordWrap = (
     text: string,
     maxLineLength: number,
-    indentation: string
+    indentation: string,
   ) => {
     const words = text.split(" ");
     let lines: string[] = [];
@@ -85,7 +88,7 @@ const Contact: React.FC = () => {
   const handleInputChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
+      | React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
 
@@ -183,11 +186,14 @@ There's a message for you:\n
               textAlign: "center",
             }}
           >
-              
-              <p className="font-black mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">
-              <span className="text-[--orange]" style={{color: '#55c9e6'}}>&lt;</span>
+            <p className="font-black mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">
+              <span className="text-[--orange]" style={{ color: "#55c9e6" }}>
+                &lt;
+              </span>
               {contactData.title.en}
-              <span className="text-[--orange]" style={{color: '#55c9e6'}}>/&gt;</span>
+              <span className="text-[--orange]" style={{ color: "#55c9e6" }}>
+                /&gt;
+              </span>
             </p>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center mb-4">
@@ -203,7 +209,10 @@ There's a message for you:\n
               theme={themes.nightOwl}
             >
               {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                <pre className={`${className} text-4xl overflow-auto`} style={{whiteSpace: "pre-wrap" }}>
+                <pre
+                  className={`${className} text-4xl overflow-auto`}
+                  style={{ whiteSpace: "pre-wrap" }}
+                >
                   {tokens.map((line, i) => (
                     <div {...getLineProps({ line, key: i })}>
                       {line.map((token, key) => (
@@ -219,22 +228,21 @@ There's a message for you:\n
             className="flex flex-col gap-6 justify-center items-center  px-32 w-1/2 max-lg:w-full max-lg:p-10"
             onSubmit={notifySentForm}
             autoComplete="off"
-            >
+          >
             {contactData.inputfields.map((input, index) => (
               <input
                 key={index}
                 type={input.type}
-              
                 placeholder={input.placeholder.en}
                 name={input.name}
                 value={
                   input.name === "name"
                     ? name
                     : input.name === "email"
-                    ? email
-                    : input.name === "subject"
-                    ? subject
-                    : message
+                      ? email
+                      : input.name === "subject"
+                        ? subject
+                        : message
                 }
                 required
                 onFocus={() => {
@@ -250,13 +258,13 @@ There's a message for you:\n
                   theme === "dark"
                     ? "bg-[--blackblue] dark-mode-shadow "
                     : "bg-[--icewhite] dark-shadow "
-                }h-20 px-5 rounded-md text-2xl font-bold text-color=${theme === 'dark' ? 'black' : 'white'}`}
-                style={{ fontFamily: "Arial" }}/>
+                }h-20 px-5 rounded-md text-2xl font-bold text-color=${theme === "dark" ? "black" : "white"}`}
+                style={{ fontFamily: "Arial" }}
+              />
             ))}
             <textarea
               rows={contactData.textarea.rows}
               placeholder={contactData.textarea.placeholder.en}
-      
               name={contactData.textarea.name}
               onFocus={() => {
                 handleInputFocus(contactData.textarea.name);
@@ -271,8 +279,8 @@ There's a message for you:\n
                 theme === "dark"
                   ? "bg-[--blackblue] dark-mode-shadow"
                   : "bg-[--icewhite] dark-shadow"
-              }h-20 px-5 rounded-md text-2xl font-bold  text-color=${theme === 'dark' ? 'black' : 'white'}`}
-           style={{ fontFamily: "Arial",  paddingTop: "1rem" }}
+              }h-20 px-5 rounded-md text-2xl font-bold  text-color=${theme === "dark" ? "black" : "white"}`}
+              style={{ fontFamily: "Arial", paddingTop: "1rem" }}
             />
             <div className="privacy-checkbox flex gap-16">
               <label
@@ -287,35 +295,30 @@ There's a message for you:\n
                 />
                 <span className="checkbox"></span>
               </label>
-              <p>
-            
-                {contactData.privacyOptIn.checkbox.en}
-              </p>
+              <p>{contactData.privacyOptIn.checkbox.en}</p>
             </div>
-            
+
             <Button
-            value={
-              `${contactData.button.value.en}`
-            }
-            iconSVG={contactData.icon}
-            buttoncolor={contactData.colors.main}
-            iconcolor={contactData.colors.icon}
-            type="submit"
-            elementType="input"
-          />
-          <ToastContainer
-            className="w-max text-3xl block p-3 max-lg:w-full "
-            position="bottom-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme={theme}
-          />
+              value={`${contactData.button.value.en}`}
+              iconSVG={contactData.icon}
+              buttoncolor={contactData.colors.main}
+              iconcolor={contactData.colors.icon}
+              type="submit"
+              elementType="input"
+            />
+            <ToastContainer
+              className="w-max text-3xl block p-3 max-lg:w-full "
+              position="bottom-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme={theme}
+            />
           </form>
         </div>
       </section>

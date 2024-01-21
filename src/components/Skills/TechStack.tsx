@@ -33,22 +33,27 @@ const TechStack: React.FC = () => {
           opacity={theme === "light" ? "opacity-30" : "opacity-30"}
           position="top-[55rem]"
         />
-      <div className="title-container flex flex-col justify-center items-center p-8 md:p-16 lg:p-24 xl:p-32 h-full">
-        <motion.div
+        <div className="title-container flex flex-col justify-center items-center p-8 md:p-16 lg:p-24 xl:p-32 h-full">
+          <motion.div
             ref={animationReference}
             style={{
-            scale: scaleProgess,
-            opacity: opacityProgess,
+              scale: scaleProgess,
+              opacity: opacityProgess,
             }}
-        >
+          >
             <p className="font-black mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">
-              <span className="text-[--orange]" style={{color: '#55c9e6'}}>&lt;</span>Skills
-              <span className="text-[--orange]" style={{color: '#55c9e6'}}>/&gt;</span>
+              <span className="text-[--orange]" style={{ color: "#55c9e6" }}>
+                &lt;
+              </span>
+              Skills
+              <span className="text-[--orange]" style={{ color: "#55c9e6" }}>
+                /&gt;
+              </span>
             </p>
             <h1 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center mb-4">
-            My TechStack and Skills
+              My TechStack and Skills
             </h1>
-        </motion.div>
+          </motion.div>
         </div>
 
         <div className="flex gap-40 justify-center max-lg:flex-col pt-0">

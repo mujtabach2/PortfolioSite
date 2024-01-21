@@ -4,7 +4,7 @@ import {
   spaceStyles,
   heightStyles,
   directionStyles,
-} from '../assets/data'
+} from "../assets/data";
 
 interface DividerProps {
   direction:

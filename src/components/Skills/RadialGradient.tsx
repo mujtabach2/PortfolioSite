@@ -25,7 +25,7 @@ const RadialGradient: React.FC<RadialGradientProps> = ({
       const windowHeight = window.innerHeight;
       const newMouseXPercentage = Math.round((event.pageX / windowWidth) * 100);
       const newMouseYPercentage = Math.round(
-        (event.pageY / windowHeight) * 100
+        (event.pageY / windowHeight) * 100,
       );
 
       setMouseXPercentage(newMouseXPercentage);

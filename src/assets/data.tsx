@@ -45,16 +45,13 @@ export const headerIntroData = {
     {
       name: "Projects",
       label: {
-    
         en: "My Projects",
       },
       icon: FiGithub,
       color: "secondary-btn",
     },
   ],
-  
 } as const;
-
 
 export const liveTickerData = {
   content: {
@@ -187,13 +184,10 @@ export const skillsDataCMS = [
 export const navLinks = [
   { en: "Home", hash: "#home", icon: GoHome },
   { en: "About me", hash: "#aboutme", icon: GoPerson },
-  { en: "Skills", hash: "#skills"},
+  { en: "Skills", hash: "#skills" },
   { en: "Projects", hash: "#projects", icon: GoProject },
   { en: "Contact", hash: "#contact", icon: GoMail },
 ] as const;
-
-
-
 
 export const sideBarRightMail = {
   link: "mailto:mujtabawaqas@gmail.com",
@@ -218,15 +212,11 @@ export const sideBarLeftSocials = [
   },
 ] as const;
 
-
-
-
 export const contactData = {
   title: {
     en: "Contact",
   },
   description: {
-
     en: "Write me a message and I will get back to you.",
   },
   inputfields: [
@@ -245,12 +235,10 @@ export const contactData = {
     {
       name: "email",
       placeholder: {
-        
         en: "Your E-Mail",
       },
       type: "email",
       validation: {
-        
         en: "Please fill in your email",
       },
       pattern: "[@]{4}",
@@ -258,12 +246,10 @@ export const contactData = {
     {
       name: "subject",
       placeholder: {
-
         en: "Your Subject",
       },
       type: "text",
       validation: {
-    
         en: "Please fill in your subject",
       },
       pattern: "{10}",
@@ -271,20 +257,17 @@ export const contactData = {
   ],
   textarea: {
     placeholder: {
-
       en: "Your Message",
     },
     name: "message",
     rows: 10,
     validation: {
-      
       en: "Please fill in your message",
     },
     pattern: "{10}",
   },
   button: {
     value: {
-   
       en: "Send",
     },
   },
@@ -297,11 +280,9 @@ export const contactData = {
   },
   privacyOptIn: {
     checkbox: {
-     
       en: "I agree that Mujtaba may use my personal data (name and e-mail address) to contact me.",
     },
     description: {
-     
       en: "By submitting this request, you acknowledge that you have read the Private Policy",
     },
   },
@@ -309,19 +290,16 @@ export const contactData = {
 
 export const toastMessages = {
   loadingProject: {
-
     en: "🦄 The live demo will open shortly. Starting servers...",
   },
   successEmailSent: {
-    
     en: "🦄 Thank you for your email. I will get back to you as soon as possible",
   },
   failedEmailSent: {
-  
     en: "🦄 Unfortunately the sending of your email did not work. Please try again later",
   },
   failedValidationName: {
-   en: "Please fill in your name",
+    en: "Please fill in your name",
   },
 } as const;
 

@@ -43,7 +43,7 @@ export const ScrollProgress: React.FC<ScrollProgressProps> = ({
       style={{
         ...barAnimation,
         height: height,
-        background: 'linear-gradient(to right, #bdc3c7 , #004e92',
+        background: "linear-gradient(to right, #bdc3c7 , #004e92",
         originX: barPosition,
       }}
     />

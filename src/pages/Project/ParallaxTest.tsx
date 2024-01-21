@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect } from "react";
 import {
   motion,
@@ -9,9 +8,9 @@ import {
   useVelocity,
   useAnimationFrame,
 } from "framer-motion";
-import { wrap } from "@motionone/utils"; 
+import { wrap } from "@motionone/utils";
 import { Link } from "react-router-dom";
-import { sideBarLeftSocials, liveTickerData } from "../../assets/data"
+import { sideBarLeftSocials, liveTickerData } from "../../assets/data";
 import { useTheme } from "../../assets/theme-context";
 
 interface ParallaxProps {
@@ -124,7 +123,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export default function LiveTicker() {
   const { theme } = useTheme();
- 
+
   return (
     <>
       <div className="bg-[--darkblue] h-[4.8vh] -rotate-3 flex justify-center items-center scale-110 relative z-[1] w-full min-[1921px]:h-[3.3vh]">
@@ -134,8 +133,10 @@ export default function LiveTicker() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-[--lightblue]"  >&lt;</span>
-            <span style={{color: `${theme === 'dark' ? 'white': 'white'}`}}>More Projects on Github</span>
+            <span className="text-[--lightblue]">&lt;</span>
+            <span style={{ color: `${theme === "dark" ? "white" : "white"}` }}>
+              More Projects on Github
+            </span>
             <span className="text-[--lightblue]">/&gt;</span>
           </Link>
         </ParallaxText>

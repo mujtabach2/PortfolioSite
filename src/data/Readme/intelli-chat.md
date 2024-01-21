@@ -1,4 +1,3 @@
-
 Intelli-Chat Generator is an AI-driven language learning tool that allows users to engage in chat conversations with an AI bot, making language learning fun and immersive.
 
 ## Features
@@ -33,32 +32,33 @@ Visit [IntelliChat](https://659b92eb4826241a5019b6ff--intelli-chat.netlify.app) 
    ```bash
    git clone https://github.com/mujtabach2/LangauageApp.git
    ```
+
 2. Install dependencies:
 
-    ```bash
-    cd frontend 
-    npm install
-    cd ../Backend
-    npm install
-    ```
+   ```bash
+   cd frontend
+   npm install
+   cd ../Backend
+   npm install
+   ```
+
 3. Set up .ENV file with api key variables and base urls.
 4. Start the backend server:
 
-    ```bash
-    cd Backend
-    npm start
-    ```
+   ```bash
+   cd Backend
+   npm start
+   ```
+
 5. Start the frontend server:
-    ```bash
-    cd frontend
-    npm start
-    ```
-   
+   ```bash
+   cd frontend
+   npm start
+   ```
+
 ### Usage: Local Version
 
 Open your browser and go to http://localhost:3000 to view the application. Note you have to set the backend and frontend urls manually.
-
-
 
 ### Usage: Online Version
 
@@ -76,8 +76,6 @@ We welcome contributions! To contribute to the project:
 3. Make your changes and commit them.
 4. Push the changes to your fork.
 5. Submit a pull request to the main repository.
-
-
 
 ## Contact
 

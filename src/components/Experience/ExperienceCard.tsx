@@ -23,7 +23,7 @@
 
 // const ExperienceCard = (props: ExperienceCardProps) => {
 //     const avatarBorderColor = useColorModeValue('gray.700', 'white');
-    
+
 //     return (
 //         <Card>
 //             <Stack

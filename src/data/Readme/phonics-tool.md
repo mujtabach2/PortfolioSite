@@ -1,7 +1,3 @@
-
-
-
-
 The Phonics/Alphabet Tool is a web-based application designed to help kids learn phonics and the alphabet in a fun and interactive way. It provides a set of alphabet buttons that, when clicked, play the corresponding phonetic sound of the letter. The tool is ideal for educators, tutors, and parents who want to engage kids in learning the alphabet.
 
 ## Features
@@ -19,9 +15,11 @@ You can try out the Phonics/Alphabet Tool by visiting [Demo Link](https://keen-h
 ## Installation
 
 1. Clone this repository:
+
 ```
 git clone https://github.com/mujtabach2/abc.git
 ```
+
 3. Open the `index.html` file in your web browser.
 
 ## Usage

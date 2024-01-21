@@ -5,11 +5,8 @@ import ScrollToAnchor from "./Listener";
 import { useActiveSectionContext } from "../../assets/active-section-context";
 import { useTheme } from "../../assets/theme-context";
 
-
-
 const NavBar: React.FC = () => {
   const { theme } = useTheme();
-
 
   const [isSticky, setIsSticky] = useState(false);
   const { activeSection, setActiveSection, setTimeOfLastClick } =
@@ -63,13 +60,19 @@ const NavBar: React.FC = () => {
       : "opacity-20 transition-all duration-700";
 
     const leftArrow = isLinkActive && (
-      <span className="text-[--#55c9e6] absolute -left-5 top-0 max-lg:hidden" style={{color: '#55c9e6'}}>
+      <span
+        className="text-[--#55c9e6] absolute -left-5 top-0 max-lg:hidden"
+        style={{ color: "#55c9e6" }}
+      >
         &lt;
       </span>
     );
 
     const rightArrow = isLinkActive && (
-      <span className="text-[--orange] absolute top-0 -right-10 max-lg:hidden" style={{color: '#55c9e6'}}>
+      <span
+        className="text-[--orange] absolute top-0 -right-10 max-lg:hidden"
+        style={{ color: "#55c9e6" }}
+      >
         /&gt;
       </span>
     );
@@ -109,7 +112,10 @@ const NavBar: React.FC = () => {
             <CustomNavLink key={index} link={link.hash} linkEn={link.en}>
               {link.en === activeSection ? (
                 <div>
-                  <span className="text-[--orange] absolute -left-5 top-0" style={{color: '#55c9e6'}} >
+                  <span
+                    className="text-[--orange] absolute -left-5 top-0"
+                    style={{ color: "#55c9e6" }}
+                  >
                     &lt;
                   </span>
                   {link.en}
@@ -122,14 +128,13 @@ const NavBar: React.FC = () => {
                     setTimeOfLastClick(Date.now());
                   }}
                 >
-                  { link.en}
+                  {link.en}
 
                   {/* {link.de.toLocaleUpperCase()} */}
                 </div>
               )}
             </CustomNavLink>
           ))}
-
         </nav>
       )}
       {isMobileMenuActive && (
@@ -141,9 +146,7 @@ const NavBar: React.FC = () => {
           {navLinks.map((link, mobileIndex) => (
             <CustomNavLink key={mobileIndex} link={link.hash} linkEn={link.en}>
               {link.en === activeSection ? (
-                 <div className="text-[3.2rem] flex flex-col items-center">
-
-                </div>
+                <div className="text-[3.2rem] flex flex-col items-center"></div>
               ) : (
                 <div
                   className="text-[2rem] flex flex-col items-center "
@@ -157,12 +160,10 @@ const NavBar: React.FC = () => {
                       });
                     }
                   }}
-                >
-                </div>
+                ></div>
               )}
             </CustomNavLink>
           ))}
-     
         </nav>
       )}
     </React.Fragment>

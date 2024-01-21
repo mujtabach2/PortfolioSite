@@ -14,11 +14,7 @@ const BannerQuote: React.FC<BannerProps> = ({
   quoteIndex,
   containerType,
 }) => {
-
-
-  
-
-//   useQuoteAnimation(`.${containerType}-container h2`);
+  //   useQuoteAnimation(`.${containerType}-container h2`);
 
   return style === "withBG" ? (
     <React.Fragment>
@@ -34,9 +30,8 @@ const BannerQuote: React.FC<BannerProps> = ({
         >
           <div className="quote-container rotate-3 flex items-center flex-col justify-center p-56 max-lg:p-20 ">
             <h2 className="text-[--white] text-center text-8xl mb-20 mt-20 max-lg:text-[3rem] max-lg:mb-10 max-lg:leading-tight">
-              {''}
+              {""}
             </h2>
-
           </div>
         </div>
       </section>
@@ -47,7 +42,7 @@ const BannerQuote: React.FC<BannerProps> = ({
         <div className="h-[50vh] -rotate-3 flex justify-center items-center scale-110">
           <div className="statement-container rotate-3 flex items-center flex-col justify-center p-56 max-lg:p-20">
             <h2 className="text-[--black] text-center text-9xl mb-20 mt-20 max-lg:text-[3rem] max-lg:mb-10 max-lg:leading-tight">
-                {''}
+              {""}
             </h2>
           </div>
         </div>

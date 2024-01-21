@@ -1,4 +1,3 @@
-
 ![NBA Lineup Analysis](/imgs/img1.png)
 
 ## Description
@@ -16,19 +15,23 @@ The NBA Lineup Analysis Tool is a web application built using Streamlit to analy
 - Comparison of two teams based on user-selected performance metrics.
 
 ## Website Link: https://nbaanalysis-jd6oodyc3uurmtwm5euidk.streamlit.app/
+
 ## Installation
 
 1. Clone the repository:
+
 ```
 git clone https://github.com/mujtabach2/nbaAnalysis.git
 ```
 
 2. Install the required Python packages:
+
 ```
 pip install -r requirements.txt
 ```
 
 3. Download the NBA lineup dataset 'NBALineup2021.csv' and place it in the project folder. You can alter the lineup year by changing this line accordingly in `data.py`:
+
 ```
 def get_lineups(team_id_i);
   ...
@@ -39,23 +42,23 @@ def get_lineups(team_id_i);
 ## Usage
 
 1. Run the Streamlit app:
+
 ```
 streamlit run main.py
 ```
 
 2. On the web application, select the desired NBA team and a lineup from the available options.
 
-5. Use the dropdown to choose specific performance metrics for sorting the lineup.
-![Stat Dropdown](/imgs/img2.png)
+3. Use the dropdown to choose specific performance metrics for sorting the lineup.
+   ![Stat Dropdown](/imgs/img2.png)
 
 4. The app will display the selected lineup's statistics, including points, field goal percentage, assists, rebounds, steals, blocks, and more.
-![Lineup stats](/imgs/img3.png)
+   ![Lineup stats](/imgs/img3.png)
 
+5. The app will calculate and display advanced metrics such as Player Efficiency Rating (PER), True Shooting Percentage (TS%), and Effective Field Goal Percentage (eFG%).
+   ![Advanced Stats](/imgs/img4.png)
 
-6. The app will calculate and display advanced metrics such as Player Efficiency Rating (PER), True Shooting Percentage (TS%), and Effective Field Goal Percentage (eFG%).
-![Advanced Stats](/imgs/img4.png)
-
-8. To compare two teams, select a second team from the dropdown and choose a performance metric for comparison. The team's lineup will be the highest-ranked according to the performance metric
+6. To compare two teams, select a second team from the dropdown and choose a performance metric for comparison. The team's lineup will be the highest-ranked according to the performance metric
 
 ![Comparison](/imgs/img5.png)
 
@@ -64,4 +67,3 @@ streamlit run main.py
 - The NBA lineup data used in this project is sourced from [NBA Lineups](https://www.nba.com/stats/lineups/).
 - The Streamlit library was used to create the interactive web application.
 - Visualization of data was made possible using Plotly Express.
-

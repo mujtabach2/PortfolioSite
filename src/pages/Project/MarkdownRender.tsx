@@ -1,30 +1,28 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import RemarkMathPlugin from 'remark-math';
-import 'katex/dist/katex.min.css';
-import { InlineMath, BlockMath } from 'react-katex';
-import remarkGfm from 'remark-gfm'
-import rehypeKatex from 'rehype-katex'
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import RemarkMathPlugin from "remark-math";
+import "katex/dist/katex.min.css";
+import { InlineMath, BlockMath } from "react-katex";
+import remarkGfm from "remark-gfm";
+import rehypeKatex from "rehype-katex";
 
 const MarkdownRender = (props) => {
-    const newProps = {
-        ...props,
-        remarkPlugins: [RemarkMathPlugin, remarkGfm],
-        rehypePlugins: [rehypeKatex],
-        components: {
-            math: ({ value }) => <BlockMath math={value} />,
-            inlineMath: ({ value }) => <InlineMath math={value} />
-        },
-        children: props.markdown
-    }
+  const newProps = {
+    ...props,
+    remarkPlugins: [RemarkMathPlugin, remarkGfm],
+    rehypePlugins: [rehypeKatex],
+    components: {
+      math: ({ value }) => <BlockMath math={value} />,
+      inlineMath: ({ value }) => <InlineMath math={value} />,
+    },
+    children: props.markdown,
+  };
 
-    return (
-        <div style={{fontSize: '2rem'}}>
-            <ReactMarkdown className='markdown'
-                {...newProps}/>
-        </div>
-    )
-}
+  return (
+    <div style={{ fontSize: "2rem" }}>
+      <ReactMarkdown className="markdown" {...newProps} />
+    </div>
+  );
+};
 
-
-export default MarkdownRender
+export default MarkdownRender;
