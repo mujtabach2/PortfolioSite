@@ -89,11 +89,11 @@ const About: FC = () => {
               <div>
                 <h1
                   className={`color${theme === "dark" ? "black" : "white"}`}
-                  style={{ fontSize: "60px", fontWeight: 600 }}
+                  style={{ fontSize: "3rem", fontWeight: 600 }}
                 >
                   About me
                 </h1>
-                <p>
+                <p style={{fontSize: "1.5rem"}}>
                   Hello, I'm Mujtaba Chaudhry!
                   <br />
                   <br />
