@@ -10,6 +10,7 @@ import {
   Flex,
   Center,
   Link,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { Element } from "react-scroll";
 import headshot from "./headshot.png";
@@ -18,6 +19,7 @@ import { Box } from "@chakra-ui/layout";
 
 const About: FC = () => {
   const { theme } = useTheme();
+  const isLargerThan768 = useMediaQuery("(min-width: 923px)");
 
   const opentab = (event: React.MouseEvent, tabname: string) => {
     const tablinks = document.getElementsByClassName(
@@ -93,7 +95,8 @@ const About: FC = () => {
                 >
                   About me
                 </h1>
-                <p style={{fontSize: "1.5rem"}}>
+                <Text fontSize={isLargerThan768 ? "2.3rem" : "1.5rem"}>
+                  
                   Hello, I'm Mujtaba Chaudhry!
                   <br />
                   <br />
@@ -108,7 +111,8 @@ const About: FC = () => {
                   Intelligence. Outside of tech, I'm an avid fan of football and
                   MMA. My dream? To be a Software Engineer at Twitter, shaping
                   the digital world one line of code at a time.
-                </p>
+                </Text>
+                
               </div>
             </div>
             <div style={{ flexBasis: "5%" }}></div>
