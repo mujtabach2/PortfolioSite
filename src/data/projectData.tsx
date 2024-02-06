@@ -14,6 +14,8 @@ import {
   StreamlitBadge,
   PandasBadge,
   JupyterBadge,
+  FlaskBadge,
+  FinRlBadge,
 } from "../components/Projects/TechBadges";
 
 import { ProjectT } from "./types";
@@ -23,8 +25,38 @@ import intelliChat from "./images/IntelliChat.png";
 import rubiksCubeSolver from "./images/solve.gif";
 import nbaLineupAnalysis from "./images/nbaAnalysis.png";
 import Billionaire from "./images/BillionareData.avif";
+import stock from "./images/stock.png";
 
 export const projectData: ProjectT[] = [
+  {
+    name: "SharpeTrade",
+    imageSrc: stock,
+    id: "sharpe-trade",
+    type: "Web app",
+    tagline: "A platform providing trading signals and insights for investors",
+    tags: [
+      <ReactBadge />,
+      <FlaskBadge />,
+      <FirebaseBadge />,
+      <PythonBadge/>,
+      <PandasBadge />,
+      <JavaScriptBadge />,
+      <FinRlBadge />,
+
+    ],
+    description:
+      "This is an ongoing project to develop a comprehensive stock analysis platform. The platform aims to provide users with detailed insights and analytics for making informed investment decisions in the stock market. The project utilizes various technologies, including FinRl for machine learning, Firebase for authentication and database management, Stripe for handling payments, and external APIs for fetching data to perform sentiment analysis.",
+    links: [
+      {
+        link: "https://github.com/mujtabach2/tradingSite",
+        icon: <FiGithub />,
+      
+      },
+
+    ]
+
+
+  },
   {
     name: "Doctor Connect",
     imageSrc: doctorConnect,

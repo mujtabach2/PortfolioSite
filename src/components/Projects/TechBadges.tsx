@@ -19,7 +19,9 @@ import {
   SiStreamlit,
   SiPandas,
   SiJupyter,
+  SiFlask,
 } from "react-icons/si";
+import { PiCpuFill } from "react-icons/pi";
 
 const badgeStyle = {
   fontSize: "2em", // Adjust the font size as needed
@@ -70,6 +72,12 @@ const JupyterBadge = () => (
   <SiJupyter style={{ ...badgeStyle, color: "#F37726" }} />
 );
 
+const FlaskBadge = () => (
+  <SiFlask style ={{...badgeStyle, color: "red"}} />
+)
+const FinRlBadge  = () => (
+  <PiCpuFill style = {{...badgeStyle, color: "green"}} />
+)
 // Add more badges as needed
 
 export {
@@ -87,4 +95,6 @@ export {
   StreamlitBadge,
   PandasBadge,
   JupyterBadge,
+  FlaskBadge,
+  FinRlBadge,
 };
