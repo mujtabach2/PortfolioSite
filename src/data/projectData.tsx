@@ -45,7 +45,7 @@ export const projectData: ProjectT[] = [
 
     ],
     description:
-      "This is an ongoing project to develop a comprehensive stock analysis platform. The platform aims to provide users with detailed insights and analytics for making informed investment decisions in the stock market. The project utilizes various technologies, including FinRl for machine learning, Firebase for authentication and database management, Stripe for handling payments, and external APIs for fetching data to perform sentiment analysis.",
+      "Independently engineered a profiting full-stack stock analysis platform integrating FinRl, Firebase, and custom API integration’s to provide daily stock signals",
     links: [
       {
         link: "https://github.com/mujtabach2/tradingSite",
