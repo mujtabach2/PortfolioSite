@@ -12,6 +12,7 @@ import {
   FaChartBar,
   FaFileCode,
   FaDesktop,
+  FaJava
 } from "react-icons/fa";
 import {
   SiSelenium,
@@ -27,7 +28,9 @@ const badgeStyle = {
   fontSize: "2em", // Adjust the font size as needed
   marginRight: "5px", // Adjust spacing as needed
 };
-
+const JavaBadge = () => (
+  <FaJava style={{ ...badgeStyle, color: "blue" }} />
+);
 const ReactBadge = () => (
   <FaReact style={{ ...badgeStyle, color: "#61DAFB" }} />
 );
@@ -97,4 +100,5 @@ export {
   JupyterBadge,
   FlaskBadge,
   FinRlBadge,
+  JavaBadge
 };

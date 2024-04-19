@@ -16,6 +16,7 @@ import {
   JupyterBadge,
   FlaskBadge,
   FinRlBadge,
+  JavaBadge
 } from "../components/Projects/TechBadges";
 
 import { ProjectT } from "./types";
@@ -26,8 +27,33 @@ import rubiksCubeSolver from "./images/solve.gif";
 import nbaLineupAnalysis from "./images/nbaAnalysis.png";
 import Billionaire from "./images/BillionareData.avif";
 import stock from "./images/stock.png";
+import chessHub from "./images/chessHub.png";
 
 export const projectData: ProjectT[] = [
+  {
+    name: "ChessHub",
+    imageSrc: chessHub,
+    id: "chess-hub",
+    type: "Web app",
+    tagline: "A platform providing real-time chess, puzzles, and ai bot integration",
+    tags: [
+      <JavaScriptBadge />,
+      <HTMLCSSBadge />,
+      <JavaBadge />,
+
+    ],
+    description:
+      "Led development of ChessHub, a real-time chess platform built with Java, WebSockets, and modern front-end technologies. Implemented complex chess logic and AI integration to create a scalable and engaging multiplayer experience.",
+    links: [
+      {
+        link: "https://github.com/mujtabach2/chess-hub",
+        icon: <FiGithub />,
+      
+      },
+
+    ]
+
+  },
   {
     name: "SharpeTrade",
     imageSrc: stock,
