@@ -16,7 +16,7 @@ import {
   JupyterBadge,
   FlaskBadge,
   FinRlBadge,
-  JavaBadge
+  JavaBadge,
 } from "../components/Projects/TechBadges";
 
 import { ProjectT } from "./types";
@@ -35,24 +35,18 @@ export const projectData: ProjectT[] = [
     imageSrc: chessHub,
     id: "chess-hub",
     type: "Web app",
-    tagline: "A platform providing real-time chess, puzzles, and ai bot integration",
-    tags: [
-      <JavaScriptBadge />,
-      <HTMLCSSBadge />,
-      <JavaBadge />,
-
-    ],
+    tagline:
+      "A platform providing real-time chess, puzzles, and ai bot integration",
+    tags: [<JavaScriptBadge />, <HTMLCSSBadge />, <JavaBadge />],
     description:
-      "Led development of ChessHub, a real-time chess platform built with Java, WebSockets, and modern front-end technologies. Implemented complex chess logic and AI integration to create a scalable and engaging multiplayer experience.",
-    links: [
+    "Led ChessHub development, a dynamic chess platform with Java and WebSockets. Engineered intricate chess logic and AI integration, fostering an immersive multiplayer environment.",
+     links: [
       {
         link: "https://github.com/mujtabach2/chess-hub",
         icon: <FiGithub />,
-      
       },
-
-    ]
-
+    ],
+    website: "https://chess-hub.netlify.app/",
   },
   {
     name: "SharpeTrade",
@@ -64,24 +58,21 @@ export const projectData: ProjectT[] = [
       <ReactBadge />,
       <FlaskBadge />,
       <FirebaseBadge />,
-      <PythonBadge/>,
+      <PythonBadge />,
       <PandasBadge />,
       <JavaScriptBadge />,
       <FinRlBadge />,
-
     ],
     description:
-      "Independently engineered a profiting full-stack stock analysis platform integrating FinRl, Firebase, and custom API integration’s to provide daily stock signals",
+      "Solely crafted SharpeTrade, a profit-generating stock analysis system. Seamlessly integrated FinRl and Firebase, delivering daily stock signals via custom APIs for informed trading decisions.",
     links: [
       {
         link: "https://github.com/mujtabach2/tradingSite",
+
         icon: <FiGithub />,
-      
       },
-
-    ]
-
-
+    ],
+    website: "https://sharpetrade.netlify.app/",
   },
   {
     name: "Doctor Connect",
@@ -97,14 +88,16 @@ export const projectData: ProjectT[] = [
       <SeleniumBadge />,
     ],
     description:
-      "Developed a robust doctor lookup site using the MERN stack, connecting and serving a vast network of over 1,000 doctors, streamlining the process of finding healthcare professionals for patients in need.",
+      "Architected Doctor Connect, a comprehensive MERN stack site linking over 1,000 doctors. Streamlined patient access to healthcare professionals, enhancing medical care accessibility.",
     links: [
       {
         link: "https://github.com/mujtabach2/DoctorLookup",
+
         icon: <FiGithub />,
       },
       // Add more links if needed
     ],
+    website: "https://doctor-connect.netlify.app/",
   },
   {
     name: "IntelliChat",
@@ -120,7 +113,7 @@ export const projectData: ProjectT[] = [
       <SeleniumBadge />,
     ],
     description:
-      "Conceived the Intelli Chat Generator, utilizing cutting-edge Artificial intelligence (AI) to create a transformative language learning tool. Orchestrated immersive chat interactions with an advanced AI bot, supporting proficiency in 15+ languages and elevating the learning experience.",
+      "Pioneered Intelli Chat Generator, a revolutionary AI-driven language learning tool. Orchestrated immersive chat sessions with an advanced AI bot, facilitating proficiency in over 15 languages.",
     links: [
       {
         link: "https://github.com/mujtabach2/LangauageApp",
@@ -128,6 +121,7 @@ export const projectData: ProjectT[] = [
       },
       // Add more links if needed
     ],
+    website: "https://intelli-chat.netlify.app/",
   },
   {
     name: "Rubik’s Cube Solver",
@@ -142,14 +136,16 @@ export const projectData: ProjectT[] = [
       <GitBadge />,
     ],
     description:
-      "Created an advanced Rubik’s Cube solver using computer vision and the Kociemba algorithm for efficient solving in under 2 seconds. Optimized a robust color detection system to enhance sticker identification and mapping accuracy.",
+      "Engineered an advanced Rubik’s Cube solver utilizing computer vision and the Kociemba algorithm. Achieved sub-2-second solving with precise sticker identification and mapping.",
     links: [
       {
         link: "https://github.com/mujtabach2/rubixSolver",
+
         icon: <FiGithub />,
       },
       // Add more links if needed
     ],
+    website: "https://github.com/mujtabach2/rubixSolver",
   },
   {
     name: "NBA Lineup Analysis",
@@ -165,14 +161,16 @@ export const projectData: ProjectT[] = [
       <GitBadge />,
     ],
     description:
-      "Launched and executed an NBA Lineup Analysis Tool leveraging Streamlit; facilitated comprehensive analysis with intuitive visualizations, resulting in a 75% increase in Fantasy performance and data-driven strategic decision-making.",
+      "Launched a NBA Lineup Analysis Tool via Streamlit, boosting Fantasy performance by 75%. Provided data-driven insights for strategic decision-making through intuitive visualizations.",
     links: [
       {
         link: "https://github.com/mujtabach2/nbaAnalysis",
+
         icon: <FiGithub />,
       },
       // Add more links if needed
     ],
+    website: "https://github.com/mujtabach2/nbaAnalysis",
   },
   {
     name: "Billionaire Dynamics Analysis",
@@ -182,14 +180,16 @@ export const projectData: ProjectT[] = [
     tagline: "An in-depth analysis of global billionaires",
     tags: [<PythonBadge />, <PandasBadge />, <JupyterBadge />, <GitBadge />],
     description:
-      "Conducted an in-depth analysis of global billionaires, utilizing Python and data analysis libraries. Extracted and processed data to identify trends and patterns in billionaire demographics, wealth distribution, and source of wealth.",
+      "Conducted thorough Python-based analysis on global billionaires. Extracted insights on demographic trends, wealth distribution, and sources of wealth for comprehensive understanding.",
     links: [
       {
         link: "https://github.com/mujtabach2/BillionaireEDA",
+
         icon: <FiGithub />,
       },
       // Add more links if needed
     ],
+    website: "https://github.com/mujtabach2/BillionaireEDA",
   },
   {
     name: "Phonics/Alphabet Teaching Tool",
@@ -199,14 +199,16 @@ export const projectData: ProjectT[] = [
     tagline: "An engaging web tool for kids’ phonics and alphabet learning",
     tags: [<JavaScriptBadge />, <HTMLCSSBadge />, <GitBadge />],
     description:
-      "Designed and developed an engaging web tool utilizing JavaScript and HTML/CSS, dedicated to enhancing kids’ phonics and alphabet learning experiences. Implemented a sophisticated audio playback system using the SpeechSynthesis API.",
+      "Crafted an interactive web tool for kids’ phonics and alphabet learning. Leveraged JavaScript and HTML/CSS with SpeechSynthesis API for engaging audio playback.",
     links: [
       {
         link: "https://github.com/mujtabach2/abc",
+
         icon: <FiGithub />,
       },
       // Add more links if needed
     ],
+    website: "https://github.com/mujtabach2/abc",
   },
 
   // Add more projects as needed

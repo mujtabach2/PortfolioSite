@@ -72,6 +72,7 @@ const Projects: FC = () => {
                     <LinkIconButton href={link.link} icon={link.icon} />
                   ))}
                   headerLink={data["headerLink"] || ""}
+                  website={data["website"] || ""}
                 />
               </WrapItem>
             ))}

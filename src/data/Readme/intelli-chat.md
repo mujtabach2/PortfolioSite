@@ -8,7 +8,7 @@ Intelli-Chat Generator is an AI-driven language learning tool that allows users 
 
 ## Demo
 
-Visit [IntelliChat](https://659b92eb4826241a5019b6ff--intelli-chat.netlify.app) to try out the Chat Generator and turbocharge your language skills with AI. Note does not work on Opera.
+Visit [IntelliChat](https://intelli-chat.netlify.app) to try out the Chat Generator and turbocharge your language skills with AI. Note does not work on Opera.
 
 ## Screenshots
 

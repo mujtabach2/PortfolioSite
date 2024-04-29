@@ -23,6 +23,7 @@ interface ProjectCardProps {
   description: string;
   links?: Array<ReactElement>;
   headerLink: string;
+  website?: string;
 }
 
 const ProjectCard: FC<ProjectCardProps> = (props) => {
@@ -95,6 +96,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
           </Flex>
           <HStack>{props.tags}</HStack>
           <Text color={"gray.500"}>{props.description}</Text>
+          <div style={{display: "flex", flex: "row", gap: "5px", justifyContent: "center"}}>
           <Box>
             <Link
               href={`#/projects/${props.id}`}
@@ -104,8 +106,8 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
                 variant={"outline"}
                 colorScheme={"cyan"}
                 aria-label={`Read more about ${props.name}`}
-                fontSize={"2rem"}
-                size={"lg"}
+                fontSize={"1.25rem"}
+                h={14}
                 pb={0}
                 mt={2}
                 _hover={{
@@ -117,6 +119,33 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
               </Button>
             </Link>
           </Box>
+
+          <Box>
+            {props.website && (
+              <Link
+                href={props.website}
+                _hover={{ textDecor: "none" }}
+                isExternal
+              >
+                <Button
+                  variant={"outline"}
+                  colorScheme={"cyan"}
+                  aria-label={`Visit ${props.name}'s website`}
+                  fontSize={"1.25rem"}
+                  h={14}
+                  pb={0}
+                  mt={2}
+                  _hover={{
+                    background: theme === "dark" ? "white" : "lightgray",
+                    color: theme === "dark" ? "black" : "black",
+                  }}
+                >
+                  Visit Website
+                </Button>
+              </Link>
+            )}
+          </Box>
+          </div>
         </Stack>
       </Card>
     </div>

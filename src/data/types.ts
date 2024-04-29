@@ -15,6 +15,7 @@ export interface ProjectT {
   description?: string;
   links?: LinkT[];
   headerLink?: string;
+  website?: string;
 }
 
 export interface ExperienceData {
