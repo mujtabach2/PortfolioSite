@@ -17,6 +17,9 @@ import {
   FlaskBadge,
   FinRlBadge,
   JavaBadge,
+  AiBadge,
+  NextjsBadge,
+  SupabaseBadge,
 } from "../components/Projects/TechBadges";
 
 import { ProjectT } from "./types";
@@ -28,8 +31,27 @@ import nbaLineupAnalysis from "./images/nbaAnalysis.png";
 import Billionaire from "./images/BillionareData.avif";
 import stock from "./images/stock.png";
 import chessHub from "./images/chessHub.png";
+import swift from "./images/swift.png";
 
 export const projectData: ProjectT[] = [
+  {
+    name: "SwiftDocs",
+    imageSrc: swift,
+    id: "swift-docs",
+    type: "Web app",
+    tagline:
+      "A platform providing ai resume opimization according to job descriptions",
+    tags: [<ReactBadge />, <NextjsBadge />, <SupabaseBadge />, <AiBadge />],
+    description:
+      "Developed SwiftDocs, an AI-powered resume optimization platform. Seamlessly integrated Next.js and SupaBase, providing personalized resume suggestions based on job descriptions.",
+    links: [
+      {
+        link: "https://swiftdocss.netlify.app/",
+        icon: <FiLink />,
+      },
+    ],
+    website: "https://swiftdocss.netlify.app/",
+  },
   {
     name: "ChessHub",
     imageSrc: chessHub,
@@ -39,8 +61,8 @@ export const projectData: ProjectT[] = [
       "A platform providing real-time chess, puzzles, and ai bot integration",
     tags: [<JavaScriptBadge />, <HTMLCSSBadge />, <JavaBadge />],
     description:
-    "Led ChessHub development, a dynamic chess platform with Java and WebSockets. Engineered intricate chess logic and AI integration, fostering an immersive multiplayer environment.",
-     links: [
+      "Led ChessHub development, a dynamic chess platform with Java and WebSockets. Engineered intricate chess logic and AI integration, fostering an immersive multiplayer environment.",
+    links: [
       {
         link: "https://github.com/mujtabach2/chess-hub",
         icon: <FiGithub />,

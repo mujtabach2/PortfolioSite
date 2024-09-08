@@ -96,41 +96,23 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
           </Flex>
           <HStack>{props.tags}</HStack>
           <Text color={"gray.500"}>{props.description}</Text>
-          <div style={{display: "flex", flex: "row", gap: "5px", justifyContent: "center"}}>
-          <Box>
-            <Link
-              href={`#/projects/${props.id}`}
-              _hover={{ textDecor: "none" }}
-            >
-              <Button
-                variant={"outline"}
-                colorScheme={"cyan"}
-                aria-label={`Read more about ${props.name}`}
-                fontSize={"1.25rem"}
-                h={14}
-                pb={0}
-                mt={2}
-                _hover={{
-                  background: theme === "dark" ? "white" : "lightgray",
-                  color: theme === "dark" ? "black" : "black",
-                }}
-              >
-                Read more
-              </Button>
-            </Link>
-          </Box>
-
-          <Box>
-            {props.website && (
+          <div
+            style={{
+              display: "flex",
+              flex: "row",
+              gap: "5px",
+              justifyContent: "center",
+            }}
+          >
+            <Box>
               <Link
-                href={props.website}
+                href={`#/projects/${props.id}`}
                 _hover={{ textDecor: "none" }}
-                isExternal
               >
                 <Button
                   variant={"outline"}
                   colorScheme={"cyan"}
-                  aria-label={`Visit ${props.name}'s website`}
+                  aria-label={`Read more about ${props.name}`}
                   fontSize={"1.25rem"}
                   h={14}
                   pb={0}
@@ -140,11 +122,36 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
                     color: theme === "dark" ? "black" : "black",
                   }}
                 >
-                  Visit Website
+                  Read more
                 </Button>
               </Link>
-            )}
-          </Box>
+            </Box>
+
+            <Box>
+              {props.website && (
+                <Link
+                  href={props.website}
+                  _hover={{ textDecor: "none" }}
+                  isExternal
+                >
+                  <Button
+                    variant={"outline"}
+                    colorScheme={"cyan"}
+                    aria-label={`Visit ${props.name}'s website`}
+                    fontSize={"1.25rem"}
+                    h={14}
+                    pb={0}
+                    mt={2}
+                    _hover={{
+                      background: theme === "dark" ? "white" : "lightgray",
+                      color: theme === "dark" ? "black" : "black",
+                    }}
+                  >
+                    Visit Website
+                  </Button>
+                </Link>
+              )}
+            </Box>
           </div>
         </Stack>
       </Card>

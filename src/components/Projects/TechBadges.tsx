@@ -13,6 +13,7 @@ import {
   FaFileCode,
   FaDesktop,
   FaJava,
+  FaRobot,
 } from "react-icons/fa";
 import {
   SiSelenium,
@@ -23,6 +24,8 @@ import {
   SiFlask,
 } from "react-icons/si";
 import { PiCpuFill } from "react-icons/pi";
+import { TbBrandNextjs } from "react-icons/tb";
+import { RiSupabaseFill } from "react-icons/ri";
 
 const badgeStyle = {
   fontSize: "2em", // Adjust the font size as needed
@@ -77,8 +80,16 @@ const FlaskBadge = () => <SiFlask style={{ ...badgeStyle, color: "red" }} />;
 const FinRlBadge = () => (
   <PiCpuFill style={{ ...badgeStyle, color: "green" }} />
 );
-// Add more badges as needed
 
+const AiBadge = () => <FaRobot style={{ ...badgeStyle, color: "#FFD700" }} />;
+const NextjsBadge = () => (
+  <TbBrandNextjs style={{ ...badgeStyle, color: "#000000" }} />
+);
+const SupabaseBadge = () => (
+  <RiSupabaseFill style={{ ...badgeStyle, color: "#3FCF8E" }} />
+);
+
+// Export the newly created badges
 export {
   ReactBadge,
   NodeBadge,
@@ -97,4 +108,7 @@ export {
   FlaskBadge,
   FinRlBadge,
   JavaBadge,
+  AiBadge,
+  NextjsBadge,
+  SupabaseBadge,
 };
