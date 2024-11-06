@@ -23,20 +23,21 @@ import {
 } from "../components/Projects/TechBadges";
 
 import { ProjectT } from "./types";
-import abc from "./images/abc.png";
-import doctorConnect from "./images/DoctorConnect.png";
-import intelliChat from "./images/IntelliChat.png";
-import rubiksCubeSolver from "./images/solve.gif";
-import nbaLineupAnalysis from "./images/nbaAnalysis.png";
+import abc from "./images/abc.webp";
+import doctorConnect from "./images/DoctorConnect.webp";
+import intelliChat from "./images/IntelliChat.webp";
+import rubiksCubeSolver from "./images/solve.webp";
+import nbaLineupAnalysis from "./images/nbaAnalysis.webp";
 import Billionaire from "./images/BillionareData.avif";
-import stock from "./images/stock.png";
-import chessHub from "./images/chessHub.png";
-import swift from "./images/swift.png";
+import stock from "./images/stock.webp";
+import chessHub from "./images/chessHub.webp";
+import swift from "./images/swift.webp";
 
 export const projectData: ProjectT[] = [
   {
     name: "SwiftDocs",
     imageSrc: swift,
+    alt: "SwiftDocs",
     id: "swift-docs",
     type: "Web app",
     tagline:
@@ -46,15 +47,16 @@ export const projectData: ProjectT[] = [
       "Developed SwiftDocs, an AI-powered resume optimization platform. Seamlessly integrated Next.js and SupaBase, providing personalized resume suggestions based on job descriptions.",
     links: [
       {
-        link: "https://swiftdocss.netlify.app/",
+        link: "https://swiftdocs.ca/",
         icon: <FiLink />,
       },
     ],
-    website: "https://swiftdocss.netlify.app/",
+    website: "https://swiftdocs.ca/",
   },
   {
     name: "ChessHub",
     imageSrc: chessHub,
+    alt: "ChessHub",
     id: "chess-hub",
     type: "Web app",
     tagline:
@@ -94,10 +96,11 @@ export const projectData: ProjectT[] = [
         icon: <FiGithub />,
       },
     ],
-    website: "https://sharpetrade.netlify.app/",
+    website: "https://sharpe-trade.com",
   },
   {
     name: "Doctor Connect",
+    alt: "Doctor Connect",
     imageSrc: doctorConnect,
     id: "doctor-connect",
     type: "Web app",
@@ -123,6 +126,7 @@ export const projectData: ProjectT[] = [
   },
   {
     name: "IntelliChat",
+    alt: "IntelliChat",
     id: "intelli-chat",
     imageSrc: intelliChat,
     type: "Web app",
@@ -147,6 +151,7 @@ export const projectData: ProjectT[] = [
   },
   {
     name: "Rubik’s Cube Solver",
+    alt: "Rubik’s Cube Solver",
     imageSrc: rubiksCubeSolver,
     id: "rubiks-cube-solver",
     type: "Project",
@@ -162,7 +167,6 @@ export const projectData: ProjectT[] = [
     links: [
       {
         link: "https://github.com/mujtabach2/rubixSolver",
-
         icon: <FiGithub />,
       },
       // Add more links if needed
@@ -171,6 +175,8 @@ export const projectData: ProjectT[] = [
   },
   {
     name: "NBA Lineup Analysis",
+    alt: "NBA Lineup Analysis",
+  
     imageSrc: nbaLineupAnalysis,
     id: "nba-lineup-analysis",
     type: "Web app",
@@ -196,6 +202,7 @@ export const projectData: ProjectT[] = [
   },
   {
     name: "Billionaire Dynamics Analysis",
+    alt: "Billionaire Dynamics Analysis",
     imageSrc: Billionaire,
     id: "billionaire-dynamics",
     type: "Data Analysis",
@@ -215,6 +222,7 @@ export const projectData: ProjectT[] = [
   },
   {
     name: "Phonics/Alphabet Teaching Tool",
+    alt: "Phonics Alphabet Teaching Tool",
     imageSrc: abc,
     id: "phonics-tool",
     type: "Web tool",
@@ -235,3 +243,30 @@ export const projectData: ProjectT[] = [
 
   // Add more projects as needed
 ];
+
+export const generateBreadcrumbSchema = (project: ProjectT) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://mujtabachaudhry.ca"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://mujtabachaudhry.ca/#/projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": project.name,
+        "item": `https://mujtabachaudhry.ca/#/projects/${project.id}`
+      }
+    ]
+  };
+};

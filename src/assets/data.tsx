@@ -199,16 +199,19 @@ export const sideBarLeftSocials = [
     link: "https://www.linkedin.com/in/mujtaba-chaudhry/",
     icon: FiLinkedin,
     altimgname: "linkedin",
+    aria : "LinkedIn"
   },
   {
     link: "https://github.com/mujtabach2",
     icon: FiGithub,
     altimgname: "github",
+    aria : "Github"
   },
   {
     link: "mailto:mujtabawaqas@gmail.com",
     icon: FiMail,
     altimgname: "mail",
+    aria : "Mail"
   },
 ] as const;
 

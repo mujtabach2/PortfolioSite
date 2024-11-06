@@ -1,4 +1,5 @@
-import { FC, ReactElement } from "react";
+// BlogCard.tsx
+import { FC } from "react";
 import {
   Box,
   useColorModeValue,
@@ -12,21 +13,21 @@ import {
   Link,
   Button,
 } from "@chakra-ui/react";
-import Card from "../generics/Card";
+import Card from "../../components/generics/Card";
 import { useTheme } from "../../assets/theme-context";
-interface ProjectCardProps {
-  name: string;
-  type: string;
-  id: string;
-  tags: Array<ReactElement>;
-  imageSrc: string;
-  description: string;
-  links?: Array<ReactElement>;
-  headerLink: string;
-  website?: string;
+
+interface BlogCardProps {
+  blog: {
+    title: string;
+    date: string;
+    imageSrc: string;
+    excerpt: string;
+    content: string;
+    slug: string;
+  };
 }
 
-const ProjectCard: FC<ProjectCardProps> = (props) => {
+const BlogCard: FC<BlogCardProps> = ({ blog }) => {
   const { theme } = useTheme();
   return (
     <div>
@@ -57,11 +58,11 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
             filter: "brightness(1.15)",
           }}
         >
-          <Link  href={`#/projects/${props.id}`} >
+          <Link href={`#/blog/${blog.slug}`}>
             <Image
               rounded={"2xl"}
-              src={props.imageSrc}
-              alt={props.name}
+              src={blog.imageSrc}
+              alt={blog.title}
               height={"175px"}
               width={"100%"}
               fit={"cover"}
@@ -82,7 +83,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
             fontSize={"xl"}
             letterSpacing={1.1}
           >
-            {props.type}
+            Blog Post
           </Text>
           <Flex>
             <Heading
@@ -90,32 +91,28 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
               fontSize={"3xl"}
               fontFamily={"body"}
             >
-              {props.name}
+              {blog.title}
             </Heading>
             <Spacer />
-            <HStack>{props.links}</HStack>
+            <Text color={"gray.500"} fontSize={"sm"}>
+              {blog.date}
+            </Text>
           </Flex>
-          <HStack>{props.tags}</HStack>
-          <Text color={"gray.500"}>{props.description}</Text>
+          <Text color={"gray.500"}>{blog.excerpt}</Text>
           <div
             style={{
               display: "flex",
               flex: "row",
               gap: "5px",
               justifyContent: "center",
-            
             }}
           >
             <Box>
-              <Link
-                href={`#/projects/${props.id}`}
-                _hover={{ textDecor: "none" }}
-              >
+              <Link href={`#/blog/${blog.slug}`} _hover={{ textDecor: "none" }}>
                 <Button
                   variant={"outline"}
-              
                   colorScheme={"cyan"}
-                  aria-label={`Read more about ${props.name}`}
+                  aria-label={`Read more about ${blog.title}`}
                   fontSize={"1.25rem"}
                   h={14}
                   pb={0}
@@ -129,32 +126,6 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
                 </Button>
               </Link>
             </Box>
-
-            <Box>
-              {props.website && (
-                <Link
-                  href={props.website}
-                  _hover={{ textDecor: "none" }}
-                  isExternal
-                >
-                  <Button
-                    variant={"outline"}
-                    colorScheme={"cyan"}
-                    aria-label={`Visit ${props.name}'s website`}
-                    fontSize={"1.25rem"}
-                    h={14}
-                    pb={0}
-                    mt={2}
-                    _hover={{
-                      background: theme === "dark" ? "white" : "lightgray",
-                      color: theme === "dark" ? "black" : "black",
-                    }}
-                  >
-                    Visit Website
-                  </Button>
-                </Link>
-              )}
-            </Box>
           </div>
         </Stack>
       </Card>
@@ -162,4 +133,4 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
   );
 };
 
-export default ProjectCard;
+export default BlogCard;

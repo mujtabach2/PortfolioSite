@@ -16,7 +16,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
 } from "@chakra-ui/react";
-
+import { Helmet } from "react-helmet-async"; // Import Helmet
 import { ProjectT } from "../../data/types";
 import { FiGithub } from "react-icons/fi";
 import MarkdownRender from "./MarkdownRender";
@@ -46,8 +46,42 @@ const ProjectContent = (props: ProjectContentProps) => {
       .catch((err) => {});
   });
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://mujtabachaudhry.ca"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://mujtabachaudhry.ca/#/projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": projectData.name,
+        "item": `https://mujtabachaudhry.ca/#/projects/${projectData.id}`
+      }
+    ]
+  };
+
   return (
     <>
+      <Helmet>
+        <link
+          rel="canonical"
+          href={`https://mujtabachaudhry.ca/#/projects/${projectData.id}`}
+        />
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Helmet>
       <RadialGradient
         opacity={theme === "light" ? "opacity-30" : "opacity-30"}
         scale="scale-y-100"
@@ -112,6 +146,7 @@ const ProjectContent = (props: ProjectContentProps) => {
                     rightIcon={link.icon}
                     colorScheme="teal"
                     variant="outline"
+                    aria-label={`Visit project ${projectData["name"]}`}
                   >
                     {link.icon.type === FiGithub ? "View code" : "Visit"}
                   </Button>

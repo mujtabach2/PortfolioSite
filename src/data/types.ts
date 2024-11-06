@@ -8,6 +8,7 @@ export interface LinkT {
 export interface ProjectT {
   name?: string;
   id?: string;
+  alt?: string;
   type?: string;
   tags?: ReactElement[];
   tagline?: string;
@@ -26,3 +27,15 @@ export interface ExperienceData {
   description: string;
   logoSrc?: string | null;
 }
+
+// Blog.tsx
+export interface BlogT {
+  id: number;
+  title: string;
+  date: string;
+  excerpt: string;
+  content: string;
+  slug: string;
+  imageSrc: string;
+}
+

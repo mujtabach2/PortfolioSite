@@ -3,14 +3,8 @@ import {
   Container,
   Heading,
   Stack,
-  Image,
-  VStack,
   Text,
-  useColorModeValue,
-  Flex,
-  Center,
-  Link,
-  useMediaQuery,
+ 
 } from "@chakra-ui/react";
 import { Element } from "react-scroll";
 import headshot from "./headshot.png";
@@ -70,6 +64,7 @@ const About: FC = () => {
           {isLargerThan768 && (
             <div style={{ flex: 1 }}>
               <img
+                loading="lazy"
                 src={headshot}
                 alt="Mujtaba Chaudhry"
                 style={{

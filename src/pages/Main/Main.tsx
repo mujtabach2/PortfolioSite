@@ -19,6 +19,7 @@ const LazyTechStack = lazy(() => import("../../components/Skills/TechStack"));
 const LazyAboutMe = lazy(() => import("../../components/About"));
 const LazyContact = lazy(() => import("../../components/Contact"));
 
+
 import RadialGradient from "../../components/Background/Background";
 
 const Main: React.FC = () => {

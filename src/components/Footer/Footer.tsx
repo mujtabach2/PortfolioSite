@@ -29,16 +29,13 @@ const Footer: React.FC = () => {
             key={index}
             target="_blank"
             rel="noopener noreferrer"
-            aria-current={
-              social.altimgname === "true"
-                ? social.altimgname + " button"
-                : social.altimgname + " button"
-            }
+            aria-label={social.altimgname + " link"}
           >
             {typeof social.icon === "function" ? (
               <social.icon className={`stroke-orange`} />
             ) : (
               <img
+                loading="lazy"
                 src={social.icon}
                 alt={social.altimgname}
                 style={{ stroke: social.iconcolor || "" }}
@@ -59,7 +56,7 @@ const Footer: React.FC = () => {
                   className={`status-icon-wave  w-[inherit] h-[inherit] rounded-[inherit] bg-green-500 animate-ping `}
                 ></div>
               </div>
-              <p className={`status-text !text-green-500} `}>Status: Working</p>
+              <p className={`status-text !text-green-500 `}>Status: Working</p>
             </div>
           </React.Fragment>
         </Suspense>

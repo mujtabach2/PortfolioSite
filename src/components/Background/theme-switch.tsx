@@ -79,6 +79,7 @@ export default function ThemeSwitch() {
         <Link
           to={sideBarLeftSocials[1].link}
           target="_blank"
+          aria-label={sideBarLeftSocials[1].aria}
           rel="noopener noreferrer"
         >
           <BsGithub />
@@ -105,6 +106,7 @@ export default function ThemeSwitch() {
           to={sideBarLeftSocials[0].link}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={sideBarLeftSocials[0].aria}
         >
           <BsLinkedin />
         </Link>
@@ -132,6 +134,7 @@ export default function ThemeSwitch() {
           to={sideBarLeftSocials[2].link}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={sideBarLeftSocials[2].aria}
         >
           <BsFillEnvelopeFill />
         </Link>

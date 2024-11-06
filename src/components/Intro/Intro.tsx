@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, lazy, Suspense, useEffect, useState, memo } from "react";
 import {
   Container,
   Heading,
@@ -9,89 +9,100 @@ import {
   Button,
   Link,
   Icon,
+  useBreakpointValue,
+  Spinner,
 } from "@chakra-ui/react";
 import ReactTypingEffect from "react-typing-effect";
-
-import Socials from "../global/Socials";
 import { Element } from "react-scroll";
-import DownArrow from "./DownArrow";
 import { FiArrowUpRight } from "react-icons/fi";
 
-const Intro: FC = () => {
+// Lazy load non-critical components
+const Socials = lazy(() => import("../global/Socials"));
+const DownArrow = lazy(() => import("./DownArrow"));
+
+const Placeholder = () => (
+  <Box width="100%" height="50px" display="flex" justifyContent="center" alignItems="center">
+    <Spinner />
+  </Box>
+);
+
+const Intro: FC = memo(() => {
+  const buttonSize = useBreakpointValue({ base: "2rem", md: "2.2rem" });
+  const headingFontSize = useBreakpointValue({ base: "3.5rem", md: "4.5rem" });
+  const [typing, setTyping] = useState(false);
+
+  useEffect(() => {
+    // Initiate typing effect after initial render
+    setTyping(true);
+  }, []);
+
   return (
     <Element id="home">
       <Container
         maxW={"6xl"}
-        p={6.75}
+        p={6}
         pt={["25vh", "35vh"]}
         h={"100vh"}
-        style={{ margin: "auto" }}
+        margin="auto"
       >
         <VStack>
           <Heading
-            fontSize={"4.5rem"}
+            fontSize={headingFontSize}
             fontWeight={500}
             fontFamily={"source-code-pro, monospace"}
             textAlign="center"
-            ml={2}
+            minHeight="3rem" // Reserve space to prevent layout shift
           >
-            <ReactTypingEffect
-              text="Mujtaba Chaudhry"
-              speed={85}
-              eraseDelay={1000000}
-              typingDelay={650}
-              cursor="_"
-            />
+            {typing ? (
+              <ReactTypingEffect
+                text="Mujtaba Chaudhry"
+                speed={85}
+                eraseDelay={1000000}
+                typingDelay={650}
+                cursor="_"
+              />
+            ) : (
+              "Mujtaba Chaudhry"
+            )}
           </Heading>
-          <div>
-            <Text
-              fontSize={"2.7rem"}
-              fontWeight={300}
-              color={useColorModeValue("#5a657c", "#9199a9")}
-              textAlign="center"
-              letterSpacing={1.1}
-              ml={2}
-            >
-              Full Stack Developer
-            </Text>
-            <Box p={4} ml={79.9}>
-              <Socials color={useColorModeValue("lightblue", "#9199a9")} />
-            </Box>
-          </div>
-          <Link
-            href={"/mujtabaResume.pdf"}
-            isExternal
-            _hover={{ textDecor: "none" }}
-            mr={0}
+          <Text
+            fontSize={"2.7rem"}
+            fontWeight={300}
+            color={useColorModeValue("#5a657c", "#9199a9")}
+            textAlign="center"
+            letterSpacing={1.1}
+            minHeight="2.7rem" // Reserve space
           >
+            Full Stack Developer
+          </Text>
+          <Box p={4}>
+            <Suspense fallback={<Placeholder />}>
+              <Socials color={useColorModeValue("lightblue", "#9199a9")} />
+            </Suspense>
+          </Box>
+          <Link href={"/mujtabaResume.pdf"} isExternal>
             <Button
-              variant={"outline"}
-              colorScheme={"cyan"}
-              aria-label={"View Resume"}
-              rightIcon={
-                <Icon as={FiArrowUpRight} fontSize={"18"} mt={"3px"} />
-              }
-              rounded={"full"}
-              border={"2px"}
-              pb={0}
-              mt={2}
-              h={55}
-              w={200}
-              fontSize={"2.2rem"}
-              _hover={{
-                backgroundColor: "#101424 ",
-              }}
+              variant="outline"
+              colorScheme="cyan"
+              aria-label="View Resume"
+              rightIcon={<Icon as={FiArrowUpRight} />}
+              fontSize={buttonSize}
+              _hover={{ backgroundColor: "#101424" }}
+              width="150px" // Fixed width
+              height="50px" // Fixed height
             >
               Resume
             </Button>
           </Link>
         </VStack>
         <Box mt={[10, "10vh"]}>
-          <DownArrow />
+          <Suspense fallback={<Placeholder />}>
+            <DownArrow />
+          </Suspense>
         </Box>
       </Container>
     </Element>
   );
-};
+});
 
 export default Intro;

@@ -90,6 +90,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ skillsData, theme }) => {
           }}
         >
           <img
+            loading="lazy"
             src={getSkillIconSrc(theme, skill)}
             alt={`${skill.icon}-icon`}
             className="h-[10rem]"

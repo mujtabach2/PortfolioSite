@@ -1,11 +1,10 @@
-import { FC } from "react";
+import { FC, useRef, useState, useEffect } from "react";
 import {
   VStack,
   Container,
-  Heading,
+  Button,
   Wrap,
   WrapItem,
-  Button,
   useMediaQuery,
 } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
@@ -15,9 +14,7 @@ import { projectData } from "../../data/projectData";
 import { Link } from "react-router-dom";
 import { useSectionInView } from "../../assets/hooks";
 import { useTheme } from "../../assets/theme-context";
-
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
 import Scroll from "react-scroll";
 import LiveTicker from "../../pages/Project/ParallaxTest";
 
@@ -34,6 +31,12 @@ const Projects: FC = () => {
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  // Lazy loading state
+  const visibleItems = isMobile ? 6 : 3
+  const loadMoreRef = useRef<HTMLDivElement>(null);
+
+ 
 
   return (
     <Element id="projects">
@@ -59,8 +62,8 @@ const Projects: FC = () => {
             </motion.div>
           </div>
           <Wrap spacing={0} justify="center">
-            {projectData.slice(0, isMobile ? 6 : 3).map((data) => (
-              <WrapItem p={5}>
+            {projectData.slice(0, visibleItems).map((data, index) => (
+              <WrapItem key={index} p={5}>
                 <ProjectCard
                   name={data["name"] || ""}
                   type={data["type"] || ""}
@@ -77,7 +80,7 @@ const Projects: FC = () => {
               </WrapItem>
             ))}
           </Wrap>
-
+          <div ref={loadMoreRef} style={{ height: "1px" }}></div> {/* Trigger point for loading more */}
           <Link to={"/projects"}>
             <Button
               variant={"solid"}

@@ -34,15 +34,16 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   if (elementType === "input") {
-    return <input {...commonProps} value={value}></input>;
+    return <input {...commonProps} value={value} aria-label={label || "input button"} />;
   } else {
     return (
-      <Link to={link || ""} className="no-underline">
+      <Link to={link || ""} className="no-underline" aria-label={label || "button link"}>
         <button {...commonProps}>
           {IconSVGComponent ? (
             <IconSVGComponent className={"w-max h-10"} />
           ) : (
             <img
+              loading="lazy"
               src={buttoncolor || ""}
               alt={`${label}-icon`}
               className={`bg-[${buttoncolor || ""}] w-16 `}

@@ -1,33 +1,44 @@
 import * as React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
+import { HelmetProvider } from "react-helmet-async"; // Import HelmetProvider
 import Theme from "./theme";
-import Footer from "./components/Footer";
+
 import { Route, Routes } from "react-router";
-import Main from "./pages/Main/Main";
-import Project from "./pages/Project/Project";
-import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 import ThemeContextProvider from "./assets/theme-context";
-
 import ActiveSectionContextProvider from "./assets/active-section-context";
-import { useTheme } from "./assets/theme-context";
-import { ScrollProgress } from "./components/Background/ScrollProgress";
 
-const BackgroundComponent = React.lazy(
-  () => import("./components/Background/Background"),
-);
+// Lazy load page components
+const Main = React.lazy(() => import("./pages/Main/Main"));
+const Project = React.lazy(() => import("./pages/Project/Project"));
+const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage/ProjectsPage"));
+const BlogsPage = React.lazy(() => import("./pages/BlogPage/BlogsPage"));
+const Blogs = React.lazy(() => import("./pages/Blog/Blogs"));
+
+// Lazy load other components
+const BackgroundComponent = React.lazy(() => import("./components/Background/Background"));
+const LazyFooter = React.lazy(() => import("./components/Footer"));
 
 export const App = () => (
-  <ChakraProvider>
-    <ThemeContextProvider>
-      <ActiveSectionContextProvider>
-        <Routes>
-          <Route index path="/" element={<Main />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/projects/:id" element={<Project />} />
-        </Routes>
+  <HelmetProvider> {/* Wrap the app with HelmetProvider */}
+    <ChakraProvider>
+      <ThemeContextProvider>
+        <ActiveSectionContextProvider>
+          <React.Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route index path="/" element={<Main />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:id" element={<Project />} />
+              <Route path="/blog" element={<BlogsPage />} />
+              <Route path="/blog/:slug" element={<Blogs />} />
+              
+            </Routes>
+          </React.Suspense>
 
-        <Footer />
-      </ActiveSectionContextProvider>
-    </ThemeContextProvider>
-  </ChakraProvider>
+          <React.Suspense fallback={<div>Loading footer...</div>}>
+            <LazyFooter />
+          </React.Suspense>
+        </ActiveSectionContextProvider>
+      </ThemeContextProvider>
+    </ChakraProvider>
+  </HelmetProvider>
 );
